@@ -1,13 +1,17 @@
-import React from 'react'
-import { useRouteData } from 'react-static'
+import React from "react";
+import { useRouteData } from "react-static";
+// import { navigate } from "@reach/router";
 //
-import { Link } from 'components/Router'
+import { Link, Redirect } from "components/Router";
 
 export default function Blog() {
-  const { posts } = useRouteData()
+  const { posts } = useRouteData();
+
+  // navigate("/about");
   return (
     <div>
       <h1>It's blog time.</h1>
+      <Redirect to="/about" noThrow />;
       <div>
         <a href="#bottom" id="top">
           Scroll to bottom!
@@ -26,5 +30,5 @@ export default function Blog() {
         Scroll to top!
       </a>
     </div>
-  )
+  );
 }
